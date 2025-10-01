@@ -423,9 +423,13 @@
       <img src="./static/images/local_path_planner.png" 
            alt="Local Path Planner illustration"
            style="float:right; width:520px; margin:10px 0 10px 20px; border-radius:8px;">
-      <!-- <p style="text-align:justify;"> -->
-        The local path planner refines the trajectory provided by the global planner, ensuring smooth and dynamically feasible motions. It incorporates real-time obstacle avoidance using a signed distance field (SDF) approximation and optimizes the control inputs through a model predictive control (MPC) framework. At each planning step, the MPC considers future states over a finite horizon and selects inputs that minimize control effort while respecting safety constraints around obstacles. This enables the robot to follow the global path reliably, while adapting to sudden changes in the environment such as dynamic obstacles or narrow passages.
-      <!-- </p> -->
+      <p style="text-align:justify;">
+        The local path planner refines the trajectory provided by the global planner, ensuring smooth and dynamically feasible motions. 
+        It incorporates real-time obstacle avoidance using a signed distance field (SDF) approximation and optimizes the control inputs 
+        through a model predictive control (MPC) framework. At each planning step, the MPC considers future states over a finite horizon 
+        and selects inputs that minimize control effort while respecting safety constraints around obstacles. This enables the robot to 
+        follow the global path reliably, while adapting to sudden changes in the environment such as dynamic obstacles or narrow passages.
+      </p>
       <div style="clear:both;">
       </div>
 
