@@ -388,56 +388,50 @@
 </section>
 <!--/ Real-world result -->
 
-
-  
-<!-- Planner Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content">
-          
-          <!-- 큰 제목 -->
-          <h2 class="title is-3">Planner</h2>
-          <p>
-            Our global path planner is built on an occupancy grid map created by projecting 
-            the SLAM-based point cloud into 2D, combined with the A* algorithm.
-          </p>
-          <p>
-            In the competition setting, the robot only needs to navigate through designated 
-            corridors, and the safest path is always along the center of the corridor — 
-            where the robot maintains equal distance from obstacles.
-          </p>
-          <p>
-            To find this path, we calculate a signed distance field (SDF) from the occupancy 
-            grid map and derive its gradient. By masking the pixels near the zero-level 
-            gradient, we create what we call a zero-SDF gradient map. These masked pixels 
-            represent the central lines of corridors, equidistant from obstacles. We then 
-            restrict A* search to this reduced set of valid pixels.
-          </p>
-          <p>
-            This approach not only reduces the search space within narrow corridors, but 
-            also provides a high-quality initial guess for the local path planner, which 
-            subsequently refines the trajectory while considering detailed obstacle avoidance.
-          </p>
+    <div class="content">
 
-          <!-- 작은 제목 -->
-          <h3 class="title is-4">Global Path Planner</h3>
-          <div class="columns is-vcentered">
-            <div class="column has-text-centered">
-              <img src="images/global_path_planner.png"
-                   alt="Global Path Planner illustration"
-                   style="max-width:100%; border-radius:8px;">
-            </div>
-          </div>
+      <!-- 큰 제목 -->
+      <h2 class="title is-3">Planner</h2>
 
-        </div>
-      </div>
+      <!-- 작은 제목 -->
+      <h3 class="title is-4">Global Path Planner</h3>
+
+      <!-- 오른쪽에 끼워 넣은 이미지 -->
+      <img src="./static/images/framework.png" 
+           alt="Global Path Planner illustration"
+           style="float:right; width:300px; margin:10px 0 10px 20px; border-radius:8px;">
+
+      <!-- 본문 -->
+      <p>
+        Our global path planner is built on an occupancy grid map created by projecting 
+        the SLAM-based point cloud into 2D, combined with the A* algorithm.
+      </p>
+      <p>
+        In the competition setting, the robot only needs to navigate through designated 
+        corridors, and the safest path is always along the center of the corridor —
+        where the robot maintains equal distance from obstacles.
+      </p>
+      <p>
+        To find this path, we calculate a signed distance field (SDF) from the occupancy 
+        grid map and derive its gradient. By masking the pixels near the zero-level 
+        gradient, we create what we call a zero-SDF gradient map. These masked pixels 
+        represent the central lines of corridors, equidistant from obstacles. We then 
+        restrict A* search to this reduced set of valid pixels.
+      </p>
+      <p>
+        This approach not only reduces the search space within narrow corridors, but 
+        also provides a high-quality initial guess for the local path planner, which 
+        subsequently refines the trajectory while considering detailed obstacle avoidance.
+      </p>
+
+      <!-- float 해제 -->
+      <div style="clear:both;"></div>
+
     </div>
   </div>
 </section>
-<!--/ Planner Section -->
-
   
 
 <section class="section" id="BibTeX">
