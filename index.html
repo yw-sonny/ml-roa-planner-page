@@ -388,7 +388,7 @@
 </section>
 <!--/ Real-world result -->
 
-  
+<!-- 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content">
@@ -435,7 +435,62 @@
 
     </div>
   </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Planner</h2>
+            
+            <h3 class="title is-4">Global Path Planner</h3>
+              <div class="content has-text-justified">
+                <p>
+                  Our global path planner is built on an occupancy grid map created by projecting 
+                  the SLAM-based point cloud into 2D, combined with the A* algorithm.
+                  In the competition setting, the robot only needs to navigate through designated 
+                  corridors, and the safest path is always along the center of the corridor —
+                  where the robot maintains equal distance from obstacles.
+                  To find this path, we calculate a signed distance field (SDF) from the occupancy 
+                  grid map and derive its gradient. By masking the pixels near the zero-level 
+                  gradient, we create what we call a zero-SDF gradient map. These masked pixels 
+                  represent the central lines of corridors, equidistant from obstacles. We then 
+                  restrict A* search to this reduced set of valid pixels.
+                  This approach not only reduces the search space within narrow corridors, but 
+                  also provides a high-quality initial guess for the local path planner, which 
+                  subsequently refines the trajectory while considering detailed obstacle avoidance.
+                </p>
+              </div>
+              <div class="has-text-centered">
+                <img src="./static/images/global_path_planner.png"
+                  style="width:70%; height:auto;"/>
+              </div>
+          
+            <h3 class="title is-4">Local Path Planner</h3>
+            <div class="content has-text-justified">
+              <p>
+                The local path planner refines the trajectory provided by the global planner, ensuring smooth and dynamically feasible motions. 
+                It incorporates real-time obstacle avoidance using a signed distance field (SDF) approximation and optimizes the control inputs 
+                through a model predictive control (MPC) framework. At each planning step, the MPC considers future states over a finite horizon 
+                and selects inputs that minimize control effort while respecting safety constraints around obstacles. This enables the robot to 
+                follow the global path reliably, while adapting to sudden changes in the environment such as dynamic obstacles or narrow passages.
+              </p>
+            
+              <div class="columns is-vcentered">
+                <div class="column has-text-centered">
+                  <img src="./static/images/local_path_planner.png"/>
+                </div>
+            
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 
 <section class="section" id="BibTeX">
