@@ -123,6 +123,36 @@
         <div class="content">
           <h2 class="title is-3">Methodologies and Results</h2>
 
+            <!-- Rotatable Area -->
+            <h3 class="title is-4">Rotatable Area</h3>
+              <div class="content has-text-justified">
+                <p>
+                  The Rotatable Area (RoA), denoted by $R$, is defined as the continuous range of 
+                  yaw heading angles within which the robot can rotate at position $(x, y)$ without colliding with obstacles.
+                </p>
+            
+                <p style="text-align:center;">
+                  $$
+                  R = (layer, g_u, g_d, <b>p</b>, <b>R</b>, \psi_s, \psi_e, \tau) \tag{1}
+                  $$
+                </p>
+            
+                <p>
+                  The parameters $\psi_s, \psi_e \in [0, 2\pi]$ denote the start and end of the RoA, 
+                  and all parameters are referenced to the world frame. 
+                  If the robot’s heading angle is between $\psi_s$ and $\psi_e$ at $(x, y)$, 
+                  the robot remains collision-free. 
+                  Within the range corresponding to RoA, the robot can rotate freely.
+                </p>
+              </div>
+              <div class="has-text-centered">
+                <img src="./static/images/aa.png"
+                  style="width:100%; height:auto;"   
+                  alt="Rotatable area illustration"/>
+                <p>Three types of rotatable area. (a) Fully-RoA, $R_F$, (b) Non-RoA, $R_N$, (c) Partially-RoA, $R_{P,i}$</p>
+              </div>
+            <!-- Rotatable Area -->
+          
             <!-- Mapping -->
             <h3 class="title is-4">Mapping</h3>
               <div class="content has-text-justified">
@@ -188,7 +218,7 @@
 </section>
 
 <p>
-  [1] 3D RoA-Planner: Path Planner for Quadruped Robots in Confined Spaces Using 3D Rotatable Areas
+  [1] 3D RoA-Planner: Path Planner for Quadruped Robots in Confined Spaces Using 3D Rotatable Areas <br>
   [2] Efficient Global Navigational Planning in 3D Structures based on Point Cloud Tomography
 </p>
 
