@@ -101,8 +101,12 @@
           <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Path planning in obstacle-dense environments is a challenging problem, particularly for robots with asymmetric rectangular footprints. 
-                To address this problem, we propose a novel collision-checking approach, called a Rotatable Area, whicable for practical applications.
+                While the conventional 3D RoA-Planner [1] efficiently generates collision-free SE(3) paths for quadruped robots via 2D search, it is limited to environments represented by a single height map, making it inapplicable to multi-layered or multi-floor structures. 
+                To address this limitation, we propose an enhanced framework that integrates the methodology of the PCT-Planner [2] for multi-layer navigation. 
+                In PCT-Planner, by decomposing a complex 3D environment into multiple layers and generating ground and ceiling tomograms for each, it is possible to transform the computationally intensive 3D path planning problem into a series of efficient 2D tasks. 
+                In this work, leveraging these tomograms, we generate 3D Rotatable Areas (RoAs) that accounts for multi-floor constraints and represent the entire workspace as a Multi-Layered RoA-Map. 
+                Optimal paths are then computed using the A* algorithm. 
+                This approach successfully extends the 3D RoA-Planner to multi-layered environments, significantly enhancing the robot's mobility in complex, real-world scenarios.
               </p>
             </div>
         </div>
@@ -183,6 +187,10 @@
   </div>
 </section>
 
+<p>
+  [1] 3D RoA-Planner: Path Planner for Quadruped Robots in Confined Spaces Using 3D Rotatable Areas
+  [2] Efficient Global Navigational Planning in 3D Structures based on Point Cloud Tomography
+</p>
 
 
 
