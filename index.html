@@ -130,11 +130,17 @@
                   In this study, the <strong>Rotatable Area (RoA)</strong> is extended from the conventional 3D RoA to incorporate multi-floor environmental data. 
                 </p>
             
-                <p style="text-align:center;">
+                <!-- <p style="text-align:center;">
                   $$
                   R = (l, g_u, g_d, \mathbf{p}, \mathbf{R}, \psi_s, \psi_e, \tau) \tag{1}
                   $$
-                </p>
+                </p> -->
+
+                <div style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #007bff; margin: 20px 0;">
+                  <p style="text-align:center; font-size: 1.1em;">
+                      $$ R = (l, g_u, g_d, \mathbf{p}, \psi_s, \psi_e, \tau) \tag{1} $$
+                  </p>
+                </div>  
               </div>
               <p>
                   The standard 3D RoA represents the collision-free yaw range $[\psi_s, \psi_e]$ at a given position $\mathbf{p}$, 
@@ -145,9 +151,9 @@
                   To enable path planning in multi-layered structures, we introduce additional state variables to the existing RoA framework:
               </p>
               <ul>
-                  <li><strong>Layer Index $l (= 0, 1, \dots, n)$</strong>: The specific layer index where the RoA is generated.</li>
-                  <li><strong>Upward Gateway RoA $g_u (\in \{0, 1\})$<strong>: A Indicator representing whether the RoA serves as a transition point to the upper layer.<li>
-                  <li><strong>Downward Gateway RoA $g_d (\in \{0, 1\})$<strong>: A Indicator representing whether the RoA serves as a transition point to the lower layer.</li>
+                  <li><strong>Layer Index $l$ $(= 0, 1, \dots, n)$</strong>: The specific layer index where the RoA is generated.</li>
+                  <li><strong>Upward Gateway RoA $g_u\in \{0, 1\}$</strong>strong>: A Indicator representing whether the RoA serves as a transition point to the upper layer.<li>
+                  <li><strong>Downward Gateway RoA $g_d\in \{0, 1\}$</strong>strong>: A Indicator representing whether the RoA serves as a transition point to the lower layer.</li>
               </ul>
           
               <p>
