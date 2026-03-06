@@ -133,7 +133,7 @@
             
                 <p style="text-align:center;">
                   $$
-                  R = (layer, g_u, g_d, \textbf{p}, \textbf{R}, \psi_s, \psi_e, \tau) \tag{1}
+                  R = (l, g_u, g_d, \mathbf{p}, \mathbf{R}, \psi_s, \psi_e, \tau) \tag{1}
                   $$
                 </p>
             
@@ -161,12 +161,6 @@
                   yaw heading angles within which the robot can rotate at position $(x, y)$ without colliding with obstacles.
                 </p>
             
-                <p style="text-align:center;">
-                  $$
-                  R = (x, y, \psi_s, \psi_e)^T \tag{1}
-                  $$
-                </p>
-            
                 <p>
                   The parameters $\psi_s, \psi_e \in [0, 2\pi]$ denote the start and end of the RoA, 
                   and all parameters are referenced to the world frame. 
@@ -179,7 +173,7 @@
                 <img src="./static/images/aa.png"
                   style="width:100%; height:auto;"   
                   alt="Rotatable area illustration"/>
-                <p>Three types of rotatable area. (a) Fully-RoA, $R_F$, (b) Non-RoA, $R_N$, (c) Partially-RoA, $R_{P,i}$</p>
+                <p>Mapping framework</p>
               </div>
             <!-- Mapping -->
 
