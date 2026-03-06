@@ -127,30 +127,32 @@
             <h3 class="title is-4">Rotatable Area</h3>
               <div class="content has-text-justified">
                 <p>
-                  The Rotatable Area (RoA), denoted by $R$, is defined as the continuous range of 
-                  yaw heading angles within which the robot can rotate at position $(x, y)$ without colliding with obstacles.
+                  In this study, the <strong>Rotatable Area (RoA)</strong> is extended from the conventional 3D RoA to incorporate multi-floor environmental data. 
                 </p>
             
                 <p style="text-align:center;">
                   $$
-                  R = (l, g_u, g_d, \mathbf{\textit{p}}, \mathbf{\textit{R}}, \psi_s, \psi_e, \tau) \tag{1}
+                  R = (l, g_u, g_d, \textbf{\textit{p}}, \textbf{\textit{R}}, \psi_s, \psi_e, \tau) \tag{1}
                   $$
                 </p>
-            
-                <p>
-                  The parameters $\psi_s, \psi_e \in [0, 2\pi]$ denote the start and end of the RoA, 
-                  and all parameters are referenced to the world frame. 
-                  If the robot’s heading angle is between $\psi_s$ and $\psi_e$ at $(x, y)$, 
-                  the robot remains collision-free. 
-                  Within the range corresponding to RoA, the robot can rotate freely.
-                </p>
               </div>
-              <div class="has-text-centered">
-                <img src="./static/images/aa.png"
-                  style="width:100%; height:auto;"   
-                  alt="Rotatable area illustration"/>
-                <p>Three types of rotatable area. (a) Fully-RoA, $R_F$, (b) Non-RoA, $R_N$, (c) Partially-RoA, $R_{P,i}$</p>
-              </div>
+              <p>
+                  The standard 3D RoA represents the collision-free yaw range $[\psi_s, \psi_e]$ at a given position $\mathbf{p}$, 
+                  where the robot’s collision model is aligned with the roll and pitch of the terrain normal. It also includes $\tau$, 
+                  which denotes the traversability of the area.
+              </p>
+              <p>
+                  To enable path planning in multi-layered structures, we introduce additional state variables to the existing RoA framework:
+              </p>
+              <ul>
+                  <li><strong>$l$</strong>: The specific layer index where the RoA is generated.</li>
+                  <li><strong>$g_u$ / $g_d$</strong>: Indicators for upward or downward connectivity, representing whether the RoA serves as a transition point to an adjacent layer (e.g., stairs or ramps).</li>
+              </ul>
+          
+              <p>
+                  By integrating these parameters, the proposed <strong>Multi-Layered RoA framework</strong> effectively represents 3D connectivity, 
+                  allowing for robust global planning across multiple floors and complex vertical structures.
+              </p>
             <!-- Rotatable Area -->
           
             <!-- Mapping -->
