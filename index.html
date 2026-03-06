@@ -145,8 +145,9 @@
                   To enable path planning in multi-layered structures, we introduce additional state variables to the existing RoA framework:
               </p>
               <ul>
-                  <li><strong>$l (= 0, 1, \dots, n)$</strong>: The specific layer index where the RoA is generated.</li>
-                  <li><strong>$g_u$ / $g_d$ $(\in \{0, 1\})$</strong>: Indicators for upward or downward connectivity, representing whether the RoA serves as a transition point to an adjacent layer.</li>
+                  <li><strong>Layer Index $l (= 0, 1, \dots, n)$</strong>: The specific layer index where the RoA is generated.</li>
+                  <li><strong>Upward Gateway RoA $g_u (\in \{0, 1\})$<strong>: A Indicator representing whether the RoA serves as a transition point to the upper layer.<li>
+                  <li><strong>Downward Gateway RoA $g_d (\in \{0, 1\})$<strong>: A Indicator representing whether the RoA serves as a transition point to the lower layer.</li>
               </ul>
           
               <p>
